@@ -1,0 +1,17 @@
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Service.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Service.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Common.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Data.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Models.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\EntityFramework.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Common.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Data.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Data.dll.config
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Models.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Shop.Models.dll.config
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\EntityFramework.xml
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.csproj.AssemblyReference.cache
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.csproj.CoreCompileInputs.cache
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.csproj.CopyComplete
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.pdb
