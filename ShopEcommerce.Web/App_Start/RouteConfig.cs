@@ -44,6 +44,12 @@ namespace ShopEcommerce.Web
             );
 
             routes.MapRoute(
+                name: "Product By Tag ",
+                url: "{tagID}/infor",
+                defaults: new { controller = "Product", action = "ProductTag", tagID = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }

@@ -33,7 +33,7 @@
                 <div class="carousel-caption">
                     <h3>Áo Vest <span>Nam</span></h3>
                     <p>Mẫu Mới Nhất Tại Cửa Hàng</p>
-                    <a class="hvr-outline-out button2" href="#">Shop Now </a>
+                    <a class="hvr-outline-out button2" href="#">Mua Sắm Ngay </a>
                 </div>
             </div>
         </div>
@@ -129,19 +129,14 @@
     <div class="container">
         <h3 class="wthree_text_info">Các mặt hàng <span>hiện có</span></h3>
         <ul class="resp-tabs-list">
-            @foreach (var listProductCategory in Model.latesProductCategory)
+            @foreach (var listProductCategory in Model.latesProductCategory.Where(x => x.ParentID != null))
             {
-                <li> <font color="green">@listProductCategory.Name</font></li>
+                var url = "/" + listProductCategory.Alias + "-pc-" + listProductCategory.ID + "/infor";
+                <li><a href="@url"><font color="green"><strong>@listProductCategory.Name</strong></font></a></li>
             }
         </ul>
-        @*product*@
-
-
-        @*end product*@
     </div>
 </div>
-
-
 <div class="coupons">
     <div class="coupons-grids text-center">
         <div class="w3layouts_mail_grid">

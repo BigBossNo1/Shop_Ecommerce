@@ -42,7 +42,7 @@ namespace Shop.Service
         IEnumerable<Tag> GetListTagProductID(int id);
 
         // phân trang
-        IEnumerable<Product> GetListProductByTag(string tagID, int page, int pageSize, out int totalRow);
+        IEnumerable<Product> GetListProductByTag(string tagID);
 
         IEnumerable<Product> GetHotProduct();
         IEnumerable<Product> GetSameInforProduct(int id);
@@ -127,7 +127,7 @@ namespace Shop.Service
 
         public IEnumerable<Product> GetHotProduct()
         {
-            return _productRepository.GetMulti(x => x.HotFlag == true);
+            return _productRepository.GetMulti(x => x.HotFlag == true).Take(3);
         }
 
         public IEnumerable<Product> GetLastest(int top)
@@ -145,9 +145,9 @@ namespace Shop.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Product> GetListProductByTag(string tagID, int page, int pageSize, out int totalRow)
+        public IEnumerable<Product> GetListProductByTag(string tagID)
         {
-            throw new NotImplementedException();
+            return _productRepository.GetListProductByTag(tagID);
         }
 
         public IEnumerable<Tag> GetListTagProductID(int id)

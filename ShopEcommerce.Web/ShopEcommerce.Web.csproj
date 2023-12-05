@@ -308,7 +308,9 @@
     <Content Include="Assets\Client\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Assets\Client\images\1.png" />
     <Content Include="Assets\Client\images\2.png" />
+    <Content Include="Assets\Client\images\a-mi.png" />
     <Content Include="Assets\Client\images\ab_pic.jpg" />
+    <Content Include="Assets\Client\images\ami-r.png" />
     <Content Include="Assets\Client\images\arrow.png" />
     <Content Include="Assets\Client\images\b1.jpg" />
     <Content Include="Assets\Client\images\b2.jpg" />
@@ -336,6 +338,8 @@
     <Content Include="Assets\Client\images\btn_play.png" />
     <Content Include="Assets\Client\images\btn_prev.png" />
     <Content Include="Assets\Client\images\close_1.png" />
+    <Content Include="Assets\Client\images\corgi-r.png" />
+    <Content Include="Assets\Client\images\corgi.png" />
     <Content Include="Assets\Client\images\d1.jpg" />
     <Content Include="Assets\Client\images\d2.jpg" />
     <Content Include="Assets\Client\images\d3.jpg" />
@@ -352,6 +356,7 @@
     <Content Include="Assets\Client\images\m8.jpg" />
     <Content Include="Assets\Client\images\mark1.png" />
     <Content Include="Assets\Client\images\mid.jpg" />
+    <Content Include="Assets\Client\images\pan-da.png" />
     <Content Include="Assets\Client\images\s1.jpg" />
     <Content Include="Assets\Client\images\s2.jpg" />
     <Content Include="Assets\Client\images\s3.jpg" />
@@ -367,6 +372,7 @@
     <Content Include="Assets\Client\images\t3.jpg" />
     <Content Include="Assets\Client\images\t4.jpg" />
     <Content Include="Assets\Client\images\tick-mark1.png" />
+    <Content Include="Assets\Client\images\tom.png" />
     <Content Include="Assets\Client\images\top1.jpg" />
     <Content Include="Assets\Client\images\top2.jpg" />
     <Content Include="Assets\Client\images\up_arrow.png" />
@@ -5141,6 +5147,7 @@
     <Content Include="Views\Shared\Menu.cshtml" />
     <Content Include="Views\Product\Category.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\ProductTag.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Share\Footer\" />

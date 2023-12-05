@@ -13,11 +13,13 @@ namespace ShopEcommerce.Web.Controllers
     {
         private IProductService _productService;
         private IProductCategoryService _productCategoryService;
+        private IProductTagService _productTagService;
 
-        public ProductController(IProductService productService, IProductCategoryService productCategoryService)
+        public ProductController(IProductService productService, IProductCategoryService productCategoryService, IProductTagService productTagService)
         {
             _productService = productService;
             _productCategoryService = productCategoryService;
+            _productTagService = productTagService;
         }
 
         public ActionResult Category(int id, int page = 1)
@@ -47,7 +49,17 @@ namespace ShopEcommerce.Web.Controllers
             int idCategory = inforProduct.CategoryID;
             var listSame = _productService.GetSameInforProduct(idCategory);
             ViewBag.ListSame = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(listSame);
+            var listTagProduct = _productTagService.GetTagByID(id);
+            ViewBag.ListTagProduct = Mapper.Map<IEnumerable<ProductTag>, IEnumerable<ProductTagViewModel>>(listTagProduct);
             return View(productModel);
+        }
+
+        public ActionResult ProductTag(string tagID)
+        {
+            var listproductByTag = _productService.GetListProductByTag(tagID);
+            var listproductViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(listproductByTag);
+            ViewBag.Tag = tagID;
+            return View(listproductViewModel);
         }
     }
 }

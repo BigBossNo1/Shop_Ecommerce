@@ -53,7 +53,12 @@ namespace ShopEcommerce.Web.Infrastructure.Extensions
         }
 
         // UPDATE PRODUCT TAG
+        public static void UpdateProductTag(this ProductTag productTag, ProductTagViewModel productTagViewModel)
+        {
+            productTag.ProductID = productTagViewModel.ProductID;
+            productTag.TagID = productTagViewModel.TagID;
 
+        }
         // UPDATE OEDER
         public static void UpdateOrder(this Order order, OrderViewModel orderViewModel)
         {
