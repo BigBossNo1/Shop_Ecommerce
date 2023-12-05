@@ -4,6 +4,7 @@ using Shop.Data.Repository;
 using Shop.Models.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Shop.Service
 {
@@ -42,6 +43,10 @@ namespace Shop.Service
 
         // phân trang
         IEnumerable<Product> GetListProductByTag(string tagID, int page, int pageSize, out int totalRow);
+
+        IEnumerable<Product> GetHotProduct();
+        IEnumerable<Product> GetSameInforProduct(int id);
+        IEnumerable<Product> GetProductByParentId(int id , int page , int pageSize , out int totalRow);
     }
 
     public class ProductService : IProductService
@@ -120,6 +125,11 @@ namespace Shop.Service
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Product> GetHotProduct()
+        {
+            return _productRepository.GetMulti(x => x.HotFlag == true);
+        }
+
         public IEnumerable<Product> GetLastest(int top)
         {
             throw new NotImplementedException();
@@ -145,9 +155,21 @@ namespace Shop.Service
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Product> GetProductByParentId(int id, int page, int pageSize, out int totalRow)
+        {
+            var query =  _productRepository.GetMulti(x => x.Status == true && x.CategoryID == id);
+            totalRow = query.Count();
+            return query.Skip((page - 1)*pageSize).Take(pageSize);
+        }
+
         public IEnumerable<Product> GetReatedProduct(int id, int top)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Product> GetSameInforProduct(int id)
+        {
+            return _productRepository.GetMulti(x => x.CategoryID == id).Take(4);
         }
 
         public Tag getTag(string tagID)

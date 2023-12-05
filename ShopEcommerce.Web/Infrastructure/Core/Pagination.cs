@@ -17,6 +17,7 @@ namespace ShopEcommerce.Web.Infrastructure.Core
 
         public int TotalPage { get; set; }
         public int TotalCount { get; set; }
+        public int MaxPage { set; get; }
         public IEnumerable<T> Items { get; set; }
     }
 }
