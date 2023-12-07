@@ -9,3 +9,8 @@ E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\bin\Debug\EntityFramework.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\bin\Debug\EntityFramework.SqlServer.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\obj\Debug\Shop.Models.csproj.CopyComplete
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\obj\Debug\Shop.Models.csproj.AssemblyReference.cache

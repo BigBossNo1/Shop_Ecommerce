@@ -1,6 +1,9 @@
 ﻿namespace Shop.Data.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Shop.Models.Models;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -20,6 +23,7 @@
             //  to avoid creating duplicate seed data.
             CreateProductCategorySample(context);
             CreateProductSample(context);
+            CreateApplicationUserSample(context);
         }
 
         private void CreateProductCategorySample(Shop.Data.ShopDbContext context)
@@ -52,6 +56,34 @@
                 context.Products.AddRange(listProduct);
                 context.SaveChanges();
             }
+        }
+
+        private void CreateApplicationUserSample(ShopDbContext context)
+        {
+            //This method will be called after migrating to the latest version.
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+            var user = new ApplicationUser()
+            {
+                UserName = "toanlee",
+                Email = "toanlee03@gmail.com",
+                EmailConfirmed = true,
+                BirthDay = DateTime.Now,
+                FullName = "Lê Văn Toàn"
+            };
+
+            manager.Create(user, "44448888");
+
+            if (!roleManager.Roles.Any())
+            {
+                roleManager.Create(new IdentityRole { Name = "Admin" });
+                roleManager.Create(new IdentityRole { Name = "User" });
+            }
+
+            var adminUser = manager.FindByEmail("toanlee03@gmail.com");
+
+            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿/// <reference path="../../../bower_install/angular/angular.js" />
 (function (app) {
     app.service('apiServiceCommon', apiServiceCommon);
-    apiServiceCommon.$inject = ['$http', 'notificationService']
-    function apiServiceCommon($http, notificationService) {
+    apiServiceCommon.$inject = ['$http', 'notificationService', 'authenticationService']
+    function apiServiceCommon($http, notificationService, authenticationService) {
         return {
             get: get,
             post: post,
@@ -11,6 +11,7 @@
         }
         // them moi
         function post(url, data, success, fail) {
+            authenticationService.setHeader();
             $http.post(url, data).then(function (result) {
                 success(result);
             }, function (error) {
@@ -23,6 +24,7 @@
         }
         // update
         function put(url, data, success, fail) {
+            authenticationService.setHeader();
             $http.put(url, data).then(function (result) {
                 success(result);
             }, function (error) {
@@ -35,6 +37,7 @@
         }
         // lay ra
         function get(url, parameter, success, fail) {
+            authenticationService.setHeader();
             $http.get(url, parameter).then(function (result) {
                 success(result);
             }, function (error) {
@@ -43,6 +46,7 @@
         }
         // xoa
         function del(url, data, success, fail) {
+            authenticationService.setHeader();
             $http.delete(url, data).then(function (result) {
                 success(result);
             }, function (error) {
