@@ -457,6 +457,7 @@
     <Content Include="Assets\Client\js\modernizr.custom.js" />
     <Content Include="Assets\Client\js\move-top.js" />
     <Content Include="Assets\Client\js\responsiveslides.min.js" />
+    <Content Include="Assets\Client\template\RegisterContent.html" />
     <Content Include="Bower_Install\angular-loading-bar\build\loading-bar.css" />
     <Content Include="Bower_Install\angular-loading-bar\build\loading-bar.js" />
     <Content Include="Bower_Install\angular-loading-bar\build\loading-bar.min.css" />
@@ -5239,6 +5240,8 @@
     <Content Include="Bower_Install\mustache.js\wrappers\qooxdoo\mustache.js.pre" />
     <Content Include="Bower_Install\mustache.js\wrappers\yui3\mustache.js.post" />
     <Content Include="Bower_Install\mustache.js\wrappers\yui3\mustache.js.pre" />
+    <Content Include="ConnectionString.config" />
+    <Content Include="AppSettings.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

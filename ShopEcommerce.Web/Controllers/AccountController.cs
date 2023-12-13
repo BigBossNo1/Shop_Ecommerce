@@ -2,11 +2,13 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Shop.Common;
 using Shop.Models.Models;
 using ShopEcommerce.Web.App_Start;
 using ShopEcommerce.Web.Models;
 using System;
 using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -127,7 +129,15 @@ namespace ShopEcommerce.Web.Controllers
                 {
                     await _userManager.AddToRolesAsync(adminUser.Id, new string[] { "User" });
                 }
+
                 ViewData["SuccessMessage"] = "Đăng ký thành công ";
+                string content = System.IO.File.ReadAllText(Server.MapPath("/Assets/Client/template/RegisterContent.html"));
+                content = content.Replace("{{Name}}", registerViewModel.UserName);
+                content = content.Replace("{{Email}}", registerViewModel.Email);
+                content = content.Replace("{{PhoneNumber}}", registerViewModel.PhoneNumber);
+
+                MailHelper.SendMail(registerViewModel.Email, "Thông tin đăng ký ", content);
+
             }
             return View();
         }
