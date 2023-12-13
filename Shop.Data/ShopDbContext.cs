@@ -19,6 +19,7 @@ namespace Shop.Data
         public DbSet<ProductCategorye> ProductCategoryes { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public static ShopDbContext Create()
         {
             return new ShopDbContext();

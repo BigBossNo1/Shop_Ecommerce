@@ -1,8 +1,10 @@
-﻿
+﻿@model ShopEcommerce.Web.Models.ContactViewModel
 @{
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using BotDetect.Web.Mvc;
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
 
 <div class="page-head_agile_info_w3l">
     <div class="container">
@@ -50,7 +52,8 @@
     </div>
 </div>
 <div class="contact-w3-agile1 map" data-aos="flip-right">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5776.395710225605!2d105.76368994751351!3d21.011773345372685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453594e700953%3A0xdbaaf70dcbb82eb4!2zUGjDuiDEkMO0LCBOYW0gVOG7qyBMacOqbSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1701742371487!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5776.395710225605!2d105.76368994751351!3d21.011773345372685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453594e700953%3A0xdbaaf70dcbb82eb4!2zUGjDuiDEkMO0LCBOYW0gVOG7qyBMacOqbSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1701742371487!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 <div class="banner_bottom_agile_info">
     <div class="container">
         <div class="agile-contact-grids">
@@ -108,29 +111,43 @@
                 </div>
                 <div class="col-md-6 contact-form">
                     <h4 class="white-w3ls">Liên Hệ <span>Form</span></h4>
-                    <form action="#" method="post">
+                    @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+                    {
+                        if (ViewData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success" role="alert">
+                                <strong>Cảm ơn bạn !</strong> đã để lại thông tin liên hệ
+                                <br />Chúng tôi sẽ liên hệ lại sớm nhất .
+                            </div>
+                        }
+                        @Html.AntiForgeryToken();
+                        @Html.ValidationSummary(false, "", new { @class = "error" })
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="Name" required="">
+                            @Html.TextBoxFor(model => model.Name)
                             <label>Họ Và Tên</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="email" name="Email" required="">
+                            @Html.TextBoxFor(model => model.Email)
                             <label>Email</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="text" name="Subject" required="">
+                            @Html.TextBoxFor(model => model.PhoneNumber)
                             <label>Số ĐIện Thoại</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <textarea name="Message" required=""></textarea>
+                            @Html.TextBoxFor(model => model.Message)
                             <label>Lời Nhắn</label>
                             <span></span>
                         </div>
+                        MvcCaptcha ContactCaptCha = new MvcCaptcha("ContactCaptCha");
+                        @Html.Captcha(ContactCaptCha)
+                        @Html.TextBox("ContactCaptCha")
+
                         <input type="submit" value="GỬI">
-                    </form>
+                    }
                 </div>
             </div>
             <div class="clearfix"> </div>

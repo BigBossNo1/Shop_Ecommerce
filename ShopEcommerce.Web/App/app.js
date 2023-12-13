@@ -3,7 +3,8 @@
     angular.module("shopEcommerce",
         ['shop.product'
             , 'shop.common'
-            , 'shop.product_category'])
+            , 'shop.product_category'
+            , 'shop.contact' ])
         .config(config)
         .config(configAuthentication);
 

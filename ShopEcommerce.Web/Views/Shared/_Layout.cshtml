@@ -1,9 +1,5 @@
-﻿<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+﻿@using Microsoft.AspNet.Identity
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +26,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="header" id="home">
         <div class="container">
             <ul>
-                <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng nhập</a></li>
-                <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng kí </a></li>
+                <li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <a href="/myAccount-infor" style="margin-right: 20px;"><i class="fa fa-user" aria-hidden="true"></i> @User.Identity.Name</a>
+
+                        using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { @class = "logout-form", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a href="javascript:void(0);" onclick="document.getElementsByClassName('logout-form')[0].submit();">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất
+                            </a>
+                        }
+                    }
+                    else
+                    {
+                        <a href="/login-infor" style="margin-right: 50px;"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng nhập</a>
+                        <a href="/register-infor"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng kí </a>
+                    }
+                </li>
+                <li> <a href="/#!/admin" style="margin-right: 30px;"><i class="fa fa-cogs" aria-hidden="true"></i> Trang quản trị</a></li>
                 <li><i class="fa fa-phone" aria-hidden="true"></i> Gọi : 0355725203</li>
                 <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">toanlee03@gmail.com</a></li>
             </ul>
@@ -46,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <input type="search" name="search" placeholder="Tìm kiếm..." required="">
                     <input type="submit" value=" ">
                     <div class="clearfix"></div>
-                </form> 
+                </form>
             </div>
             <!-- header-bot -->
             <div class="col-md-4 logo_agile">
@@ -87,145 +101,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     @*header*@
 
-   @{ Html.RenderAction("Menu", "Home"); }
+    @{ Html.RenderAction("Menu", "Home"); }
 
     @*end header*@
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            Modal content
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body modal-body-sub_agile">
-                    <div class="col-md-8 modal_body_left modal_body_left1">
-                        <h3 class="agileinfo_sign">Đăng nhập  <span>ngay</span></h3>
-                        <form action="#" method="post">
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="Name" required="">
-                                <label>Tên đăng nhập</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <input type="password" name="password" required="">
-                                <label>Mật khẩu</label>
-                                <span></span>
-                            </div>
-                            <input type="submit" value="Đăng nhập">
-                        </form>
-                        <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-                            <li>
-                                <a href="#" class="facebook">
-                                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="twitter">
-                                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="instagram">
-                                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="pinterest">
-                                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                        <p><a href="#" data-toggle="modal" data-target="#myModal2"> Bạn không có tài khoản ?</a></p>
-                    </div>
-                    <div class="col-md-4 modal_body_right modal_body_right1">
-                        <img src="~/Assets/Client/images/log_pic.jpg" alt=" " />
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            //Modal content
-        </div>
-    </div>
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body modal-body-sub_agile">
-                    <div class="col-md-8 modal_body_left modal_body_left1">
-                        <h3 class="agileinfo_sign">Đăng ký <span>ngay</span></h3>
-                        <form action="#" method="post">
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="Name" required="">
-                                <label>Tên đăng nhập</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <input type="email" name="Email" required="">
-                                <label>Email</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <input type="password" name="password" required="">
-                                <label>Mật khẩu</label>
-                                <span></span>
-                            </div>
-                            <div class="styled-input">
-                                <input type="password" name="Confirm Password" required="">
-                                <label>Xác nhận mật khẩu</label>
-                                <span></span>
-                            </div>
-                            <input type="submit" value="Đăng kí">
-                        </form>
-                        <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-                            <li>
-                                <a href="#" class="facebook">
-                                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="twitter">
-                                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="instagram">
-                                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="pinterest">
-                                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                        <p><a href="#">Đồng ý với tất cả điều khoản của shop</a></p>
-                    </div>
-                    <div class="col-md-4 modal_body_right modal_body_right1">
-                        <img src="~/Assets/Client/images/log_pic.jpg" alt=" " />
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- //header-bot -->
     @RenderBody();
     <!--grids-->
     <!-- footer -->
-   @{ Html.RenderAction("Footer", "Home");}
+    @{ Html.RenderAction("Footer", "Home");}
     <!-- //footer -->
     <!-- login -->
     <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -288,9 +172,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!-- //login -->
     <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
     <!-- js -->
     <script src="~/Assets/Client/js/jquery-2.1.4.min.js"></script>
+    <script src="~/Bower_Install/mustache.js/mustache.js"></script>
     <!-- //js -->
     <script src="~/Assets/Client/js/modernizr.custom.js"></script>
     <!-- Custom-JavaScript-File-Links -->

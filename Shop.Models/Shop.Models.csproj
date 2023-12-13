@@ -60,6 +60,7 @@
     <Compile Include="Abtracct\CommonAttribute.cs" />
     <Compile Include="Abtracct\ICommonAttribute.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Footer.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuGroup.cs" />

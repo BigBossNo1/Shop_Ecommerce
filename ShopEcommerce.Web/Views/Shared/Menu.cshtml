@@ -1,5 +1,31 @@
 ﻿@model IEnumerable<ShopEcommerce.Web.Models.ProductCategoryViewModel>
 
+<style>
+    .w3view-cart {
+        background-color: darkcyan; /* Màu xanh dương */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 17px; /* Tăng kích thước của nút */
+    }
+
+    .top_nav_right {
+        margin-top: 4px;
+        background-color: darkcyan;
+    }
+
+    .wthreecartaits {
+        background-color: darkcyan;
+    }
+
+    /* Tăng kích thước của biểu tượng trong nút */
+    .w3view-cart i {
+        font-size: 35px;
+        color: darkorange;
+    }
+</style>
+
 <div class="ban-top">
     <div class="container">
         <div class="top_nav_left">
@@ -31,7 +57,7 @@
                                             <div class="col-sm-3 multi-gd-img">
                                                 @if (childCategory.Count() > 0)
                                                 {
-                                                    
+
                                                     <ul class="multi-column-dropdown">
                                                         @foreach (var listChild in childCategory)
                                                         {
@@ -55,16 +81,16 @@
                 </div>
             </nav>
         </div>
-        <div class="top_nav_right">
 
+        <div class="top_nav_right">
             <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-                <form action="#" method="post" class="last">
-                    <input type="hidden" name="cmd" value="_cart">
-                    <input type="hidden" name="display" value="1">
-                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-                </form>
+                <a href="/cart-infor" class="w3view-cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
+
+
         <div class="clearfix"></div>
     </div>
 </div>

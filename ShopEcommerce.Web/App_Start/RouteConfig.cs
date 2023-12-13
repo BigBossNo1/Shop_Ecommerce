@@ -8,6 +8,9 @@ namespace ShopEcommerce.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            // BotDetect requests must not be routed
+            routes.IgnoreRoute("{*botdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
+
 
             routes.MapRoute(
                 name: "About",
@@ -28,7 +31,24 @@ namespace ShopEcommerce.Web
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
             );
-
+            routes.MapRoute(
+                name: "Page Login",
+                url: "login-infor",
+                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Page Register",
+                url: "register-infor",
+                defaults: new { controller = "Account", action = "Register", id = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Page Cart Detal",
+                url: "cart-infor",
+                defaults: new { controller = "Cart", action = "CartDetail", id = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
+            );
             routes.MapRoute(
                 name: "Product Category",
                 url: "{alias}-pc-{id}/infor",

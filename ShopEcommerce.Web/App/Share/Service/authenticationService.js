@@ -1,12 +1,13 @@
 ﻿(function (app) {
     'use strict';
+
     app.service('authenticationService', ['$http', '$q', '$window',
         function ($http, $q, $window) {
             var tokenInfo;
 
             this.setTokenInfo = function (data) {
                 tokenInfo = data;
-                $window.sessionStorage["TokenInfo"] = JSON.stringify(tokenInfo);
+                $window.localStorage.setItem("TokenInfo", JSON.stringify(tokenInfo));
             }
 
             this.getTokenInfo = function () {
@@ -15,12 +16,12 @@
 
             this.removeToken = function () {
                 tokenInfo = null;
-                $window.sessionStorage["TokenInfo"] = null;
+                $window.localStorage.removeItem("TokenInfo");
             }
 
             this.init = function () {
-                if ($window.sessionStorage["TokenInfo"]) {
-                    tokenInfo = JSON.parse($window.sessionStorage["TokenInfo"]);
+                if ($window.localStorage.getItem("TokenInfo")) {
+                    tokenInfo = JSON.parse($window.localStorage.getItem("TokenInfo"));
                 }
             }
 

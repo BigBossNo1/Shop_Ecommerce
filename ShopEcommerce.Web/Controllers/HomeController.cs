@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using BotDetect.Web.Mvc;
 using Shop.Data.Infastructure;
 using Shop.Models.Models;
 using Shop.Service;
+using ShopEcommerce.Web.Infrastructure.Extensions;
 using ShopEcommerce.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -12,12 +15,14 @@ namespace ShopEcommerce.Web.Controllers
     {
         private IProductCategoryService _productCategoryService;
         private IProductService _productService;
+        private IContactService _contactService;
         private IUnitOfWork _unitOfWork;
 
-        public HomeController(IProductCategoryService productCategoryService, IProductService productService, IUnitOfWork unitOfWork)
+        public HomeController(IProductCategoryService productCategoryService, IProductService productService, IContactService contactService, IUnitOfWork unitOfWork)
         {
             _productCategoryService = productCategoryService;
             _productService = productService;
+            _contactService = contactService;
             _unitOfWork = unitOfWork;
         }
 
@@ -42,6 +47,64 @@ namespace ShopEcommerce.Web.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [CaptchaValidation("ContactCaptCha", "ContactCaptCha", "Mã xác nhận không hợp lệ")]
+        public ActionResult Contact(ContactViewModel contactViewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Contact newContact = new Contact();
+                    newContact.UpdateContact(contactViewModel);
+                    newContact.Status = false;
+                    newContact.CreateDate = DateTime.Now;
+                    _contactService.Add(newContact);
+                    _contactService.Save();
+                    ViewData["SuccessMessage"] = "Send contact success";
+                    newContact.Name = "";
+                    newContact.Email = "";
+                    newContact.PhoneNumber = 0;
+                    newContact.Message = "";
+                }
+                else
+                {
+                    ModelState.AddModelError("Faild", "Gửi liên hệ không thành công ");
+                }
+            }
+            catch (Exception ex)
+            {
+                //log
+            }
+
+            return View("Contact");
+        }
+
+        //[HttpPost]
+        //public ActionResult SendContact(ContactViewModel contactViewModel)
+        //{
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            Contact newContact = new Contact();
+        //            newContact.UpdateContact(contactViewModel);
+        //            _contactService.Add(newContact);
+        //            _contactService.Save();
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("Faild", "Gửi liên hệ không thành công ");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //log
+        //    }
+
+        //    return View("Index");
+        //}
 
         [ChildActionOnly]
         public ActionResult Footer()

@@ -16,6 +16,7 @@ using System.Web.Script.Serialization;
 namespace ShopEcommerce.Web.Api
 {
     [RoutePrefix("api/productcategory")]
+    [Authorize]
     public class ProductCategoryController : ApiController
     {
         private IProductCategoryService _productCategoryService;

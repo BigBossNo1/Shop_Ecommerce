@@ -66,14 +66,14 @@
 
             var user = new ApplicationUser()
             {
-                UserName = "toanlee",
-                Email = "toanlee03@gmail.com",
+                UserName = "ToanLV",
+                Email = "toanlvhe173348@fpt.edu.vn",
                 EmailConfirmed = true,
                 BirthDay = DateTime.Now,
                 FullName = "Lê Văn Toàn"
             };
 
-            manager.Create(user, "44448888");
+            manager.Create(user, "11110000");
 
             if (!roleManager.Roles.Any())
             {
@@ -81,9 +81,30 @@
                 roleManager.Create(new IdentityRole { Name = "User" });
             }
 
-            var adminUser = manager.FindByEmail("toanlee03@gmail.com");
+            var adminUser = manager.FindByEmail("toanlvhe173348@fpt.edu.vn");
 
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "toanlee",
+            //    Email = "toanlee03@gmail.com",
+            //    EmailConfirmed = true,
+            //    BirthDay = DateTime.Now,
+            //    FullName = "Lê Văn Toàn"
+            //};
+
+            //manager.Create(user, "44448888");
+
+            //if (!roleManager.Roles.Any())
+            //{
+            //    roleManager.Create(new IdentityRole { Name = "Admin" });
+            //    roleManager.Create(new IdentityRole { Name = "User" });
+            //}
+
+            //var adminUser = manager.FindByEmail("toanlee03@gmail.com");
+
+            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
         }
     }
 }

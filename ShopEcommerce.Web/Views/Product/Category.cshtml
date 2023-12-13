@@ -4,6 +4,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var category = (ShopEcommerce.Web.Models.ProductCategoryViewModel)ViewBag.Category;
 }
+<style>
+    .now-get {
+        background-color: cadetblue; /* Màu xanh cho nền */
+        padding: 10px 20px; /* Tăng độ rộng và chiều cao của nút nếu cần */
+        display: inline-block; /* Để nút chỉ chiếm chiều rộng của nội dung bên trong */
+        text-align: center; /* Canh giữa văn bản trong nút */
+        font-weight: bold; /* Chữ in đậm */
+        color: white; /* Màu chữ trắng */
+        text-decoration: none; /* Loại bỏ gạch chân (nếu cần) */
+    }
+</style>
 <div class="page-head_agile_info_w3l">
     <div class="container">
         <h3>@category.Name </h3>
@@ -45,22 +56,11 @@
                             <span class="item_price">@product.Price VND</span>
                             <del>@product.Price</del>
                         </div>
-                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                            <form action="#" method="post">
-                                <fieldset>
-                                    <input type="hidden" name="cmd" value="_cart" />
-                                    <input type="hidden" name="add" value="1" />
-                                    <input type="hidden" name="business" value=" " />
-                                    <input type="hidden" name="item_name" value="Formal Blue Shirt" />
-                                    <input type="hidden" name="amount" value="30.99" />
-                                    <input type="hidden" name="discount_amount" value="1.00" />
-                                    <input type="hidden" name="currency_code" value="USD" />
-                                    <input type="hidden" name="return" value=" " />
-                                    <input type="hidden" name="cancel_return" value=" " />
-                                    <input type="submit" name="submit" value="Add to cart" class="button" />
-                                </fieldset>
-                            </form>
+
+                        <div>
+                            <a class="now-get get-cart-in" href="/trang-gio-hang">THÊM VÀO GIỎ HÀNG</a>
                         </div>
+
 
                     </div>
                 </div>

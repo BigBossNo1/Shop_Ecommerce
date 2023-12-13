@@ -57,8 +57,8 @@ namespace ShopEcommerce.Web.Infrastructure.Extensions
         {
             productTag.ProductID = productTagViewModel.ProductID;
             productTag.TagID = productTagViewModel.TagID;
-
         }
+
         // UPDATE OEDER
         public static void UpdateOrder(this Order order, OrderViewModel orderViewModel)
         {
@@ -81,6 +81,19 @@ namespace ShopEcommerce.Web.Infrastructure.Extensions
             orderDetails.OrderID = orderDetailsViewModel.OrderID;
             orderDetails.ProductID = orderDetailsViewModel.ProductID;
             orderDetails.Quantity = orderDetailsViewModel.Quantity;
+        }
+
+        // UPDATE CONTACT
+        public static void UpdateContact(this Contact contact, ContactViewModel contactViewModel)
+        {
+            contact.ID = contactViewModel.ID;
+            contact.Name = contactViewModel.Name;
+            contact.Email = contactViewModel.Email;
+            contact.PhoneNumber = contactViewModel.PhoneNumber;
+            contact.Message = contactViewModel.Message;
+            contact.CreateDate = contactViewModel.CreateDate;
+            contact.ConfirmDate = contactViewModel.ConfirmDate;
+            contact.Status = contactViewModel.Status;
         }
     }
 }

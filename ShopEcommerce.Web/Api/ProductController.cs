@@ -15,6 +15,7 @@ using System.Web.Http;
 namespace ShopEcommerce.Web.Api
 {
     [RoutePrefix("api/product")]
+    [Authorize]
     public class ProductController : ApiController
     {
         private IProductService _productService;
@@ -68,6 +69,7 @@ namespace ShopEcommerce.Web.Api
                 }
                 Product newProduct = new Product();
                 newProduct.UpdateProduct(productViewModel);
+                newProduct.CreareBy = User.Identity.Name;
                 var model = _productService.Add(newProduct);
                 _productService.Save();
                 var resposeData = Mapper.Map<Product, ProductViewModel>(newProduct);
@@ -92,6 +94,8 @@ namespace ShopEcommerce.Web.Api
                 }
                 var productDb = _productService.GetById(productViewModel.ID);
                 productDb.UpdateProduct(productViewModel);
+                productDb.Createdate = DateTime.Now;
+                productDb.UpdateBy = User.Identity.Name;
                 _productService.Update(productDb);
                 _productService.Save();
                 return reques.CreateResponse(HttpStatusCode.OK);

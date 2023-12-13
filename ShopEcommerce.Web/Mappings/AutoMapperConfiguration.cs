@@ -17,6 +17,7 @@ namespace ShopEcommerce.Web.Mappings
             Mapper.CreateMap<ProductCategorye, ProductCategoryViewModel>();
             Mapper.CreateMap<ProductTag, ProductTagViewModel>();
             Mapper.CreateMap<Tag, TagViewModel>();
+            Mapper.CreateMap<Contact, ContactViewModel>();
         }
     }
 }

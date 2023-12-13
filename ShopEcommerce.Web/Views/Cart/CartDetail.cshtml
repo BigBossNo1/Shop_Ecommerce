@@ -1,0 +1,243 @@
+﻿@{
+    ViewBag.Title = "CartDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cart-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .cart-header {
+            background-color: #ee4d2d;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+            .cart-item img {
+                margin-left: 80px;
+            }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #ee4d2d;
+            margin-right: 100px;
+        }
+
+        .product-checkbox {
+        }
+
+        .product-price-end {
+            font-size: 16px;
+            color: #ee4d2d;
+            margin-right: 80px;
+        }
+
+        .quantity-input {
+            width: 80px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .quantity-container {
+            margin-right: 80px;
+        }
+
+        .remove-btn {
+            color: #ee4d2d;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cart-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ee4d2d;
+            margin-top: 10px;
+        }
+
+        .checkout-btn {
+            background-color: #ee4d2d;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .product {
+            margin-left: 150px;
+        }
+
+        .price {
+            margin-left: 170px;
+        }
+
+        .quantity {
+            margin-left: 110px;
+        }
+
+        .momney {
+            margin-left: 100px;
+        }
+
+        .action-real {
+            margin-left: 70px;
+        }
+    </style>
+    <title>Giỏ hàng</title>
+</head>
+<body>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>GIỎ HÀNG CỦA BẠN</h2>
+        </div>
+        <div class="cart-item">
+            <div class="chose"><strong><font color="green">CHỌN</font></strong></div>
+            <div class="product"><strong><font color="green">SẢN PHẨM</font></strong></div>
+            <div class="price"><strong><font color="green">ĐƠN GIÁ</font></strong></div>
+            <div class="quantity"><strong><font color="green">SỐ LƯỢNG</font></strong></div>
+            <div class="momney"><strong><font color="green">SỐ TIỀN</font></strong></div>
+            <div class="action-real"><strong><font color="green">TT</font></strong></div>
+        </div>
+
+        <div class="cart-item">
+            <input type="checkbox" class="product-checkbox">
+            <img class="product-image" src="~/Assets/Client/images/pan-da.png" alt="Product Image">
+            <div class="product-info">
+                <div class="product-name">Gấu Panda</div>
+            </div>
+            <div class="product-price">$50.00</div>
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                <input class="quantity-input" type="text" value="1" min="1" oninput="updateTotal()">
+                <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+
+            <div class="product-price-end">$50.00</div>
+            <span class="remove-btn">Xóa</span>
+        </div>
+
+        <div class="cart-item" id="cartBody">
+            <input type="checkbox" class="product-checkbox">
+            <img class="product-image" src="~/Assets/Client/images/pan-da.png" alt="Product Image">
+            <div class="product-info">
+                <div class="product-name">Gấu Panda</div>
+            </div>
+            <div class="product-price">$50.00</div>
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                <input class="quantity-input" type="text" value="1" min="1" oninput="updateTotal()">
+                <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+
+            <div class="product-price-end">$50.00</div>
+            <span class="remove-btn">Xóa</span>
+        </div>
+
+        <!-- Thêm các sản phẩm khác vào đây -->
+
+        <div class="cart-footer">
+            <div class="total-price">Tổng cộng: $100.00</div>
+            <button class="checkout-btn">Thanh toán</button>
+        </div>
+    </div>
+
+    <script>
+        function updateQuantity(button, value) {
+            var input = button.parentElement.querySelector('.quantity-input');
+            var currentValue = parseInt(input.value);
+            var newValue = currentValue + value;
+
+            if (newValue >= 1) {
+                input.value = newValue;
+                updateTotal();
+            }
+        }
+
+        function updateTotal() {
+            var quantityInput = document.querySelectorAll('.quantity-input');
+            var totalPriceElement = document.getElementById('totalPrice');
+            var totalPrice = 0;
+
+            quantityInput.forEach(function (input) {
+                var productItem = input.closest('.cart-item');
+                var priceElement = productItem.querySelector('.product-price');
+                var price = parseFloat(priceElement.textContent.replace('$', ''));
+                var quantity = parseInt(input.value);
+                totalPrice += price * quantity;
+            });
+
+            totalPriceElement.textContent = 'Tổng thanh toán: $' + totalPrice.toFixed(2);
+        }
+    </script>
+    <script id="tplCart" type="x-tmpl-mustache">
+        <input type="checkbox" class="product-checkbox">
+            <img class="product-image" src="{{Image}}" alt="Product Image">
+                <div class="product-info">
+                    <div class="product-name">{{ProductName}}</div>
+                </div>
+                <div class="product-price">{{ProductPrice}}</div>
+                <div class="quantity-container">
+                    <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                    <input class="quantity-input" data-id-"{{ProductID}}" value="{{Quantity}}" type="text" value="1" min="1" oninput="updateTotal()">
+                        <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+                 </div>
+                    <div class="product-price-end">{{Amount}}</div>
+                    <span class="remove-btn">Xóa</span>
+    </script>
+</body>
+</html>

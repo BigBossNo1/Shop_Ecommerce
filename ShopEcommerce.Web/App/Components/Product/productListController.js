@@ -41,7 +41,7 @@
                     pageSize: 10
                 }
             }
-            apiServiceCommon.get('/api/product/getall', config, function (result) {
+            apiServiceCommon.get('api/product/getall', config, function (result) {
                 if (result.data.TotalCount == 0) {
                     notificationService.displayWarning('Không có bản ghi nào tên ' + $scope.keyword);
                 } else {
@@ -56,5 +56,7 @@
             });
         }
         $scope.getListAll();
+        //
+
     }
 })(angular.module('shop.product'));
