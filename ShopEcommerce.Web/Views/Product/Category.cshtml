@@ -56,12 +56,9 @@
                             <span class="item_price">@product.Price VND</span>
                             <del>@product.Price</del>
                         </div>
-
                         <div>
-                            <a class="now-get get-cart-in" href="/trang-gio-hang">THÊM VÀO GIỎ HÀNG</a>
+                            <a class="now-get get-cart-in" href="/add-cart?productID=@product.ID" id="btnAddToCart" data-id="@product.ID">THÊM VÀO GIỎ HÀNG</a>
                         </div>
-
-
                     </div>
                 </div>
 
@@ -172,4 +169,7 @@
         </nav>
     }
 </div>
+
+
+
 

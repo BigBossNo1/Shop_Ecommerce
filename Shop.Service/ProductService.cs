@@ -47,6 +47,7 @@ namespace Shop.Service
         IEnumerable<Product> GetHotProduct();
         IEnumerable<Product> GetSameInforProduct(int id);
         IEnumerable<Product> GetProductByParentId(int id , int page , int pageSize , out int totalRow);
+        IEnumerable<Product> GetIdMoreThan5();
     }
 
     public class ProductService : IProductService
@@ -128,6 +129,11 @@ namespace Shop.Service
         public IEnumerable<Product> GetHotProduct()
         {
             return _productRepository.GetMulti(x => x.HotFlag == true).Take(3);
+        }
+
+        public IEnumerable<Product> GetIdMoreThan5()
+        {
+            return _productRepository.GetMulti(x => x.ID > 5);
         }
 
         public IEnumerable<Product> GetLastest(int top)

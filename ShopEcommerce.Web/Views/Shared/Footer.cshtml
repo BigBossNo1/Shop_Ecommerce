@@ -1,4 +1,5 @@
-﻿<div class="footer">
+﻿@model IEnumerable<ShopEcommerce.Web.Models.ProductCategoryViewModel>
+<div class="footer">
     <div class="footer_agile_inner_info_w3l">
         <div class="col-md-3 footer-left">
             <h2><a href="index.html"><span>B</span>ig Boss </a></h2>
@@ -37,11 +38,12 @@
                 <div class="col-md-4 sign-gd">
                     <h4>Thông tin <span>chúng tôi</span> </h4>
                     <ul>
-                        <li><a href="index.html">Trang Chủ</a></li>
-                        <li><a href="mens.html">Thời Trang Nam</a></li>
-                        <li><a href="womens.html">Thời trang Nữ</a></li>
-                        <li><a href="about.html">Giới Thiệu</a></li>
-                        <li><a href="contact.html">Kết Nối</a></li>
+                        <li><a href="/home">Trang Chủ</a></li>
+                        @foreach (var listProductCategory in Model)
+                        {
+                            var url = "/" + listProductCategory.Alias + "-pc-" + listProductCategory.ID + "/infor";
+                            <li><a href="@url">@listProductCategory.Name</a></li>
+                        }
                     </ul>
                 </div>
 
@@ -113,6 +115,6 @@
 
             <div class="clearfix"></div>
         </div>
-        <p class="copy-right">&copy 2023 Bigboss. Đọc quyền | Thiết kế bởi <a href="http://w3layouts.com/">W3layouts</a> và <a href="https://www.facebook.com/profile.php?id=100014497275622">LÊ VĂN TOÀN</a></p>
+        <p class="copy-right">&copy 2023 Bigboss. Độc quyền | Thiết kế bởi <a href="http://w3layouts.com/">W3layouts</a> và <a href="https://www.facebook.com/profile.php?id=100014497275622">LÊ VĂN TOÀN</a></p>
     </div>
 </div>

@@ -109,7 +109,9 @@ namespace ShopEcommerce.Web.Controllers
         [ChildActionOnly]
         public ActionResult Footer()
         {
-            return PartialView();
+            var model = _productCategoryService.GetAll();
+            var listProductCategory = Mapper.Map<IEnumerable<ProductCategorye>, IEnumerable<ProductCategoryViewModel>>(model);
+            return PartialView(listProductCategory);
         }
 
         [ChildActionOnly]

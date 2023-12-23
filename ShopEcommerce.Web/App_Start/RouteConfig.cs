@@ -50,6 +50,24 @@ namespace ShopEcommerce.Web
                 namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
             );
             routes.MapRoute(
+                name: "Page Cart Add",
+                url: "add-cart",
+                defaults: new { controller = "Cart", action = "Add", id = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Page Payment",
+                url: "payment",
+                defaults: new { controller = "Cart", action = "Payment", id = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Order success",
+                url: "order-success",
+                defaults: new { controller = "Cart", action = "OrderSuccess", id = UrlParameter.Optional },
+                namespaces: new string[] { "ShopEcommerce.Web.Controllers" }
+            );
+            routes.MapRoute(
                 name: "Product Category",
                 url: "{alias}-pc-{id}/infor",
                 defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },

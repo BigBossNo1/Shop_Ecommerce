@@ -360,6 +360,7 @@
     <Content Include="Assets\Client\css\flexslider.css" />
     <Content Include="Assets\Client\css\font-awesome.css" />
     <Content Include="Assets\Client\css\jquery-ui.css" />
+    <Content Include="Assets\Client\css\nyDesign\order.css" />
     <Content Include="Assets\Client\css\style.css" />
     <Content Include="Assets\Client\css\team.css" />
     <Content Include="Assets\Client\fonts\fontawesome-webfont.svg" />
@@ -5276,10 +5277,15 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Cart\CartDetail.cshtml" />
+    <Content Include="Views\Cart\Payment.cshtml" />
+    <Content Include="Views\Cart\OrderSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Share\Footer\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Momo\Config\" />
+    <Folder Include="Momo\Lib\" />
+    <Folder Include="Momo\Reques\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>

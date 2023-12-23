@@ -13,3 +13,4 @@ E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\obj\Debug\Shop.Models.csproj.CopyComplete
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\obj\Debug\Shop.Models.dll
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\obj\Debug\Shop.Models.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Models\obj\Debug\Shop.Models.csproj.AssemblyReference.cache

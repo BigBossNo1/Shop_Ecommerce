@@ -1,4 +1,5 @@
-﻿using BotDetect.Web.Mvc;
+﻿using BotDetect.Web;
+using BotDetect.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -8,7 +9,6 @@ using ShopEcommerce.Web.App_Start;
 using ShopEcommerce.Web.Models;
 using System;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -58,10 +58,20 @@ namespace ShopEcommerce.Web.Controllers
         }
 
         [HttpPost]
+        [CaptchaValidation("LoginCaptcha", "LoginCaptcha", "Mã xác nhận không hợp lệ")]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
+                // Kiểm tra mã captcha
+                string userEnteredCaptcha = HttpContext.Request.Form["LoginCaptcha"];
+                bool isCaptchaValid = new Captcha("LoginCaptcha").Validate(userEnteredCaptcha);
+
+                if (!isCaptchaValid)
+                {
+                    ModelState.AddModelError("", "Mã xác nhận không đúng.");
+                    return View(model);
+                }
                 ApplicationUser user = _userManager.Find(model.UserName, model.PassWord);
                 if (user != null)
                 {
@@ -137,7 +147,6 @@ namespace ShopEcommerce.Web.Controllers
                 content = content.Replace("{{PhoneNumber}}", registerViewModel.PhoneNumber);
 
                 MailHelper.SendMail(registerViewModel.Email, "Thông tin đăng ký ", content);
-
             }
             return View();
         }
