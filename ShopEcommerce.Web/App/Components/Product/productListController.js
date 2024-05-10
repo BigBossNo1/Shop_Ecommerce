@@ -57,6 +57,5 @@
         }
         $scope.getListAll();
         //
-
     }
 })(angular.module('shop.product'));

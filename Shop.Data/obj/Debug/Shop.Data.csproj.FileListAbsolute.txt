@@ -134,7 +134,7 @@ E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\ob
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.csproj.GenerateResource.cache
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.GeneratedMSBuildEditorConfig.editorconfig
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.csproj.CoreCompileInputs.cache
-E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.csproj.CopyComplete
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.dll
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.pdb
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.Migrations.addConfirmdateContact.resources
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Data\obj\Debug\Shop.Data.csproj.Up2Date

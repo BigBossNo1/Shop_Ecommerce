@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\All Code Web\\ASP.NET MVC (CODE)\\Shop_Ecommerce\\ShopEcommerce.Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{446BA8D8-80BB-4C07-953F-C939AC922C89}|ShopEcommerce.Web\\ShopEcommerce.Web.csproj|d:\\all code web\\asp.net mvc (code)\\shop_ecommerce\\shopecommerce.web\\shopecommerce.web\\app\\components\\cart\\cart.module.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{446BA8D8-80BB-4C07-953F-C939AC922C89}|ShopEcommerce.Web\\ShopEcommerce.Web.csproj|solutionrelative:shopecommerce.web\\app\\components\\cart\\cart.module.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cart.Module.js",
+              "DocumentMoniker": "D:\\All Code Web\\ASP.NET MVC (CODE)\\Shop_Ecommerce\\ShopEcommerce.Web\\ShopEcommerce.Web\\App\\Components\\Cart\\Cart.Module.js",
+              "RelativeDocumentMoniker": "ShopEcommerce.Web\\App\\Components\\Cart\\Cart.Module.js",
+              "ToolTip": "D:\\All Code Web\\ASP.NET MVC (CODE)\\Shop_Ecommerce\\ShopEcommerce.Web\\ShopEcommerce.Web\\App\\Components\\Cart\\Cart.Module.js",
+              "RelativeToolTip": "ShopEcommerce.Web\\App\\Components\\Cart\\Cart.Module.js",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-10T03:58:57.117Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

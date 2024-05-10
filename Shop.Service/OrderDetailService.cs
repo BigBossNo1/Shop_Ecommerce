@@ -21,6 +21,7 @@ namespace Shop.Service
 
         OrderDetails GetById(int id);
 
+        IEnumerable<OrderDetails> GetDetailByID(int id);
         void Save();
     }
 
@@ -61,6 +62,11 @@ namespace Shop.Service
         public OrderDetails GetById(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<OrderDetails> GetDetailByID(int id)
+        {
+            return _orderDetalRepository.GetMulti(x => x.OrderID == id);
         }
 
         public void Save()

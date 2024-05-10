@@ -16,7 +16,6 @@ namespace Shop.Data.Repository
          : base(dbFactory)
         {
         }
-
         public IEnumerable<Product> GetListProductByTag(string tagID)
         {
             var query = from p in DbContext.Products
@@ -26,5 +25,6 @@ namespace Shop.Data.Repository
                         select p;
             return query;
         }
+
     }
 }

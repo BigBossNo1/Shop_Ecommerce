@@ -95,5 +95,26 @@ namespace ShopEcommerce.Web.Infrastructure.Extensions
             contact.ConfirmDate = contactViewModel.ConfirmDate;
             contact.Status = contactViewModel.Status;
         }
+
+        //UPDATE APPLICATIONUSER
+
+        public static void UpdateApplicationUser(this ApplicationUser applicationUser, ApplicationUserViewModel applicationUserViewModel)
+        {
+            applicationUser.Id = applicationUserViewModel.Id;
+            applicationUser.FullName = applicationUserViewModel.FullName;
+            applicationUser.Address = applicationUserViewModel.Address;
+            applicationUser.BirthDay = applicationUserViewModel.BirthDay;
+            applicationUser.Email = applicationUserViewModel.Email;
+            applicationUser.EmailConfirmed = applicationUserViewModel.EmailConfirmed;
+            applicationUser.PasswordHash = applicationUserViewModel.PasswordHash;
+            applicationUser.SecurityStamp = applicationUserViewModel.SecurityStamp;
+            applicationUser.PhoneNumber = applicationUserViewModel.PhoneNumber;
+            applicationUser.PhoneNumberConfirmed = applicationUserViewModel.PhoneNumberConfirmed;
+            applicationUser.TwoFactorEnabled = applicationUserViewModel.TwoFactorEnabled;
+            applicationUser.LockoutEndDateUtc = applicationUserViewModel.LockoutEndDateUtc;
+            applicationUser.LockoutEnabled = applicationUserViewModel.LockoutEnabled;
+            applicationUser.AccessFailedCount = applicationUserViewModel.AccessFailedCount;
+            applicationUser.UserName = applicationUserViewModel.UserName;
+        }
     }
 }

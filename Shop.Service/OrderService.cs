@@ -1,4 +1,5 @@
-﻿using Shop.Data.Repository;
+﻿using Shop.Data.Infastructure;
+using Shop.Data.Repository;
 using Shop.Models.Models;
 using System.Collections.Generic;
 
@@ -16,6 +17,8 @@ namespace Shop.Service
 
         IEnumerable<Order> GetAll(string keyWord);
 
+        IEnumerable<Order> GetAllByStatus(bool status);
+
         IEnumerable<Order> GetAllByParentId(int parentId);
 
         Order GetById(int id);
@@ -25,10 +28,13 @@ namespace Shop.Service
 
     public class OrderService : IOrderService
     {
-        IOrderRepository _orderRepository;
-        public OrderService(IOrderRepository orderRepository)
+        private IOrderRepository _orderRepository;
+        private IUnitOfWork _unirOFWork;
+
+        public OrderService(IOrderRepository orderRepository , IUnitOfWork unitOfWork)
         {
             this._orderRepository = orderRepository;
+            this._unirOFWork = unitOfWork;
         }
 
         public Order Add(Order Order)
@@ -43,12 +49,19 @@ namespace Shop.Service
 
         public IEnumerable<Order> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _orderRepository.GetAll();
         }
 
         public IEnumerable<Order> GetAll(string keyWord)
         {
-            throw new System.NotImplementedException();
+            if (!string.IsNullOrEmpty(keyWord))
+            {
+                return _orderRepository.GetAll();
+            }
+            else
+            {
+                return _orderRepository.GetMulti(x => x.CustomerName == keyWord);
+            }
         }
 
         public IEnumerable<Order> GetAllByParentId(int parentId)
@@ -56,9 +69,14 @@ namespace Shop.Service
             throw new System.NotImplementedException();
         }
 
+        public IEnumerable<Order> GetAllByStatus(bool status)
+        {
+            return _orderRepository.GetMulti(x => x.Statuss == status);
+        }
+
         public Order GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return _orderRepository.GetSingleById(id);
         }
 
         public void Save()
@@ -68,7 +86,8 @@ namespace Shop.Service
 
         public void Update(Order Order)
         {
-            throw new System.NotImplementedException();
+            _orderRepository.Update(Order);
+            _unirOFWork.Commit();
         }
     }
 }

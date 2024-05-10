@@ -1,10 +1,13 @@
 ﻿/// <reference path="../bower_install/angular/angular.js" />
 (function () {
     angular.module("shopEcommerce",
-        ['shop.product'
+        [    'shop.product'
             , 'shop.common'
             , 'shop.product_category'
-            , 'shop.contact' ])
+            , 'shop.contact'
+            , 'shop.cart'
+            , 'shop.order'
+        ])
         .config(config)
         .config(configAuthentication);
 

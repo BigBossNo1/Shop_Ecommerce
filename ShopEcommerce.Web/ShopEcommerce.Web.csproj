@@ -219,8 +219,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\ApplicationUserController.cs" />
+    <Compile Include="Api\CartController.cs" />
     <Compile Include="Api\ContactController.cs" />
     <Compile Include="Api\HomeController.cs" />
+    <Compile Include="Api\OrderController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\ProductController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -241,6 +244,7 @@
     <Compile Include="Infrastructure\Core\Pagination.cs" />
     <Compile Include="Infrastructure\Extensions\MappingExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\ApplicationUserViewModel.cs" />
     <Compile Include="Models\CartViewModel.cs" />
     <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\FooterViewModel.cs" />
@@ -259,6 +263,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />
+    <Content Include="App\Components\Cart\Cart.Module.js" />
+    <Content Include="App\Components\Cart\CartDetailController.js" />
+    <Content Include="App\Components\Cart\CartDetailView.html" />
+    <Content Include="App\Components\Cart\CartListController.js" />
+    <Content Include="App\Components\Cart\CartListView.html" />
+    <Content Include="App\Components\Cart\ListCartConfirmController.js" />
+    <Content Include="App\Components\Cart\ListCartConfirmView.html" />
     <Content Include="App\Components\Contact\Conatct.Module.js" />
     <Content Include="App\Components\Contact\ContactConfirmController.js" />
     <Content Include="App\Components\Contact\ContactConfirmView.html" />
@@ -268,6 +279,10 @@
     <Content Include="App\Components\Contact\ContactListView.html" />
     <Content Include="App\Components\Login\LoginController.js" />
     <Content Include="App\Components\Login\LoginView.html" />
+    <Content Include="App\Components\Order\getAllOrderController.js" />
+    <Content Include="App\Components\Order\getAllOrderView.html" />
+    <Content Include="App\Components\Order\getListOrderByStatussController.js" />
+    <Content Include="App\Components\Order\getListOrderByStatussView.html" />
     <Content Include="App\Components\Product\product.module.js" />
     <Content Include="App\Components\Product\productAddController.js" />
     <Content Include="App\Components\Product\productAddView.html" />
@@ -5243,6 +5258,7 @@
     <Content Include="Bower_Install\mustache.js\wrappers\yui3\mustache.js.pre" />
     <Content Include="ConnectionString.config" />
     <Content Include="AppSettings.config" />
+    <Content Include="App\Components\Order\order.module.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

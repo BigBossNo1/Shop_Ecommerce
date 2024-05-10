@@ -139,7 +139,6 @@ E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerc
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\Microsoft.Owin.Security.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\Microsoft.Owin.Security.Cookies.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\Microsoft.Owin.Security.OAuth.xml
-E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\Newtonsoft.Json.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\Newtonsoft.Json.Bson.pdb
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\Newtonsoft.Json.Bson.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\System.Buffers.xml
@@ -166,6 +165,6 @@ E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerc
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\obj\Debug\ShopEcommerce.Web.csproj.AssemblyReference.cache
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\obj\Debug\ShopEcommerce.Web.csproj.CoreCompileInputs.cache
-E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\obj\Debug\ShopEcommerce.Web.csproj.CopyComplete
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\obj\Debug\ShopEcommerce.Web.dll
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\obj\Debug\ShopEcommerce.Web.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\ShopEcommerce.Web\obj\Debug\ShopEcom.A4680154.Up2Date

@@ -35,6 +35,6 @@ E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.csproj.AssemblyReference.cache
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.csproj.CoreCompileInputs.cache
-E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.csproj.CopyComplete
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.dll
 E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Service.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\Shop_Ecommerce\ShopEcommerce.Web\Shop.Service\obj\Debug\Shop.Ser.08872B82.Up2Date
